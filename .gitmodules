@@ -1,0 +1,3 @@
+[submodule "bookbinder"]
+	path = bookbinder
+	url = ./bookbinder
