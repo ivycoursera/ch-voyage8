@@ -3,7 +3,7 @@
   margin: 0;
 }
 .App {
-  height: 100vh;
+  padding: 20px;
   text-align: center;
   display: flex;
   flex-direction: column;

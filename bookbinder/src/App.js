@@ -45,7 +45,7 @@ class App extends Component {
 
   render() {
     const isVisible = this.state.query!=="";
-    const {query} = this.state;
+    const {books} = this.state;
     return (
       <div className="App">
         <header className="App-header">
@@ -73,10 +73,9 @@ class App extends Component {
           </InputGroup>
           <br></br>
           {/* ------ BookCards ------ */}
-          <BookCards />
-          <div>
-            {query}
-          </div>
+          <BookCards
+            books={books}
+          />
         </main>
       </div>
     );
