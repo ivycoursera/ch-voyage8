@@ -23,23 +23,21 @@ class SearchBar extends Component {
     render() {
       const isVisible = this.state.query!=="";
       return (
-        <main>
-            <InputGroup>
-              <FormControl
-                placeholder= "Search by book name"
-                onChange={(e) => this.handleChange(e.target.value)}
-                value= {this.state.query}
-              />
-              <InputGroup.Append>
-                <Button
-                  variant="light"
-                  onClick ={() => this.handleClick()}
-                  hidden = {!isVisible}
-                >X</Button>
-                <Button disabled>Search</Button>
-              </InputGroup.Append>
-            </InputGroup>
-          </main>
+        <InputGroup>
+            <FormControl
+            placeholder= "Search by book name"
+            onChange={(e) => this.handleChange(e.target.value)}
+            value= {this.state.query}
+            />
+            <InputGroup.Append>
+            <Button
+                variant="light"
+                onClick ={() => this.handleClick()}
+                hidden = {!isVisible}
+            >X</Button>
+            <Button disabled>Search</Button>
+            </InputGroup.Append>
+        </InputGroup>
       );
     }
   }

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import SearchBar from './SearchBar';
+import BookCards from './BookCards';
 
 class App extends Component {
 
@@ -10,7 +11,11 @@ class App extends Component {
         <header className="App-header">
           <h1>BOOK FINDER</h1>
         </header>
-        <SearchBar />
+        <main>
+          <SearchBar />
+          <br></br>
+          <BookCards />
+        </main>
       </div>
     );
   }
