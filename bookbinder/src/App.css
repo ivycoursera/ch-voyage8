@@ -24,46 +24,6 @@
 main {
   width: 95%;
   height: 80%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  /* justify-content: center; */
-}
-
-/* ----------Search bar--------- */
-.search-bar, .search-bar form {
-  width: 90%;
-  height: 10%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  color: white;
-}
-
-.search-input {
-  width: 70%;
-  height: 40px;
-  border-right: none;
-}
-
-.search-bar button{
-  height: 35px;
-  border-left: none;
-  border-style: initial;
-  background-color: white;
-}
-
-.hide{
-  display:none;
-}
-
-.search-submit {
-  width: 20%;
-  height: 43px;
-  background-color: teal;
-  border: 2px solid rgb(134, 128, 128);
-  color: white;
 }
 
 /* --------book list component--------- */
