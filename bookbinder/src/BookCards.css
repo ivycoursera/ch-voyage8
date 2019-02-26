@@ -8,35 +8,62 @@
 }
 
 .book-card {
-    max-width: 31%;
     padding: 0;
     display: flex;
     flex-direction: row;
     justify-items: center;
     justify-content: space-between;
-    margin-bottom: 10px;
+    align-items: center;
+    margin-bottom: 20px;
     background-color: rgba(255, 250, 250, 0.952);
 }
 
+.book-card:hover{
+    transform: scale(1.01,1.01);
+    box-shadow: 0 2px 14px rgba(140, 224, 245, 0.938), 0 10px 10px rgba(65, 64, 64, 0.966);
+}
+
+.book-card-body{
+    padding:5px;
+}
+
 .book-card-image {
+    min-width: 150px;
+    max-width: 150px;
+    min-height: 230px;
+    max-height: 230px;
+    Object-fit: fill;
+    /* max-width: 40%; */
     border: .5px solid grey;
     margin: 5px;
-    width: 40%;
-    height: 80%
+
 }
 
-.card-title {
+.book-card-title {
     font-size: 2.8vw;
+    max-width: 90%;
 }
 
-.card-text {
+.card-title{
+    margin-right: 0px;
+}
+
+.book-card-text {
     font-size: 1.5vw;
 }
 
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
     .book-card {
+        min-width: 90%;
         max-width: 90%;
+    }
+
+    .book-card-image {
+        min-width: 150px;
+        max-width: 150px;
+        min-height: 230px;
+        max-height: 230px;
     }
 }
 
@@ -45,8 +72,9 @@
 @media only screen and (min-width: 600px) and (max-width: 1024px) {
     .book-card {
         max-width: 45%;
+        min-width: 45%;
     }
-    .card-title{
+    .book-card-title{
         font-size: 2.3vw;
     }
 }
@@ -55,12 +83,20 @@
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1025px) {
     .book-card {
+        min-width: 31%;
         max-width:31%;
     }
-    .card-title{
+
+    .book-card-image {
+        min-width: 100px;
+        max-width: 100px;
+        min-height: 180px;
+        max-height: 180px;
+    }
+    .book-card-title{
         font-size: 2vw;
     }
-    .card-text{
+    .book-card-text{
         font-size: 1vw;
     }
 }

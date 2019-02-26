@@ -30,13 +30,13 @@ const BookCards = (props) => {
               <Card.Body
                 className="book-card-body">
                 <Card.Title
-                  className = "card-title"
+                  className = "book-card-title"
                   >{book.volumeInfo.title}</Card.Title>
                 <Card.Text
-                  className="card-text"
+                  className="book-card-text"
                   >By:  {book.volumeInfo.authors}</Card.Text>
                 <Card.Text
-                  className="card-text"
+                  className="book-card-text"
                   >Published By:  {book.volumeInfo.publisher}</Card.Text>
                 <Button
                   href={book.volumeInfo.canonicalVolumeLink}

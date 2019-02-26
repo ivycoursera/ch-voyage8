@@ -9,21 +9,31 @@ class App extends Component {
   state = {
     query: "",
     books: {},
-    message: "Nothing to show yet. Try searching for a book!"
+    message: "Nothing to show yet. Try searching for a book by title!"
   }
 
   handleChange(query) {
     this.setState({
        query,
        books: {},
-       message: "Nothing to show yet. Try searching for a book!"
+       message: "Nothing to show yet. Try searching for a book by title!"
     })
+  }
+
+  enterPressed(e){
+    let code = e.keyCode || e.which;
+    console.log(code, this.state.query);
+    if (code === 13){
+      this.handleSearch();
+    } else {
+      return;
+    }
   }
 
   handleSearch() {
     let {query} = this.state;
     const api = "https://www.googleapis.com/books/v1/volumes?q=intitle:"
-    const url = api+query;
+    const url = api+query+'&orderBy=newest&maxResults=20';
     console.log(url);
     fetch(url, {
         method: 'GET'
@@ -60,6 +70,7 @@ class App extends Component {
               type = "search"
               placeholder= "Search by book name"
               onChange={(e) => this.handleChange(e.target.value)}
+              onKeyPress={(e) =>this.enterPressed(e)}
               value= {this.state.query}
               />
               <InputGroup.Append>
