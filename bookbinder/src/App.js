@@ -8,19 +8,14 @@ import BookCards from './BookCards';
 class App extends Component {
   state = {
     query: "",
-    books: {}
+    books: {},
+    message: "Nothing to show yet. Try searching for a book!"
   }
 
   handleChange(query) {
     this.setState({
        query
     })
-  }
-
-  handleClick(){
-     this.setState({
-       query: ""
-     })
   }
 
   handleSearch() {
@@ -33,19 +28,25 @@ class App extends Component {
       })
       .then(res =>  res.json())
       .then((data) => {
-        let books = data.items;
-        console.log(books);
-        this.setState({
-          books
-        })
-        console.log(this.state.books);
+        if (data.items){
+          let books = data.items;
+          console.log(books);
+          this.setState({
+            books
+          })
+          console.log(this.state.books);
+        } else {
+          this.setState({
+            message: "Could not find any book by that title! Try again"
+          })
+        }
       })
 
   }
 
   render() {
     const isVisible = this.state.query!=="";
-    const {books} = this.state;
+    const {books,message} = this.state;
     return (
       <div className="App">
         <header className="App-header">
@@ -55,18 +56,15 @@ class App extends Component {
           {/* ------ SearchBar ------ */}
           <InputGroup>
               <FormControl
+              type = "search"
               placeholder= "Search by book name"
               onChange={(e) => this.handleChange(e.target.value)}
               value= {this.state.query}
               />
               <InputGroup.Append>
               <Button
-                  variant="light"
-                  onClick ={() => this.handleClick()}
-                  hidden = {!isVisible}
-              >X</Button>
-              <Button
                 disabled = {!isVisible}
+                variant= "info"
                 onClick = {() => this.handleSearch()}
               >Search</Button>
               </InputGroup.Append>
@@ -75,6 +73,7 @@ class App extends Component {
           {/* ------ BookCards ------ */}
           <BookCards
             books={books}
+            message = {message}
           />
         </main>
       </div>
