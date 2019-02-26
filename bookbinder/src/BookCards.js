@@ -25,6 +25,7 @@ const BookCards = (props) => {
               <Card.Img
                 className="book-card-image"
                 variant="top"
+                alt= {book.volumeInfo.title}
                 src={book.volumeInfo.imageLinks.thumbnail}
               />
               <Card.Body

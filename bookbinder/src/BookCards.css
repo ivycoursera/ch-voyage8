@@ -36,7 +36,6 @@
     /* max-width: 40%; */
     border: .5px solid grey;
     margin: 5px;
-
 }
 
 .book-card-title {
@@ -88,10 +87,10 @@
     }
 
     .book-card-image {
-        min-width: 100px;
-        max-width: 100px;
-        min-height: 180px;
-        max-height: 180px;
+        min-width: 200px;
+        max-width: 200px;
+        min-height: 380px;
+        max-height: 380px;
     }
     .book-card-title{
         font-size: 2vw;

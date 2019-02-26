@@ -34,7 +34,6 @@ class App extends Component {
     let {query} = this.state;
     const api = "https://www.googleapis.com/books/v1/volumes?q=intitle:"
     const url = api+query+'&orderBy=newest&maxResults=20';
-    console.log(url);
     fetch(url, {
         method: 'GET'
       })
@@ -52,6 +51,11 @@ class App extends Component {
           })
         }
       })
+      .catch(error => {
+        this.setState({
+              message: "There seems to be a problem. Please check your connection and try again."
+        })
+        })
 
   }
 
