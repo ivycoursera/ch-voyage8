@@ -14,7 +14,9 @@ class App extends Component {
 
   handleChange(query) {
     this.setState({
-       query
+       query,
+       books: {},
+       message: "Nothing to show yet. Try searching for a book!"
     })
   }
 
