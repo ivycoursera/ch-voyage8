@@ -16,7 +16,7 @@ const BookCards = (props) => {
     return (
       <div className="book-cards">
         {
-          books.map((book) =>(
+          books.filter((book) => book.volumeInfo.imageLinks).map((book) =>(
             <Card
               className = "book-card"
               key={book.id}

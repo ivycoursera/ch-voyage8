@@ -30,7 +30,6 @@ class App extends Component {
       .then((data) => {
         if (data.items){
           let books = data.items;
-          console.log(books);
           this.setState({
             books
           })
