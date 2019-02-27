@@ -22,7 +22,6 @@ class App extends Component {
 
   enterPressed(e){
     let code = e.keyCode || e.which;
-    console.log(code, this.state.query);
     if (code === 13){
       this.handleSearch();
     } else {
@@ -33,7 +32,7 @@ class App extends Component {
   handleSearch() {
     let {query} = this.state;
     const api = "https://www.googleapis.com/books/v1/volumes?q=intitle:"
-    const url = api+query+'&orderBy=newest&maxResults=20';
+    const url = api+query+'&orderBy=newest&printType=books&&maxResults=20';
     fetch(url, {
         method: 'GET'
       })
@@ -44,7 +43,6 @@ class App extends Component {
           this.setState({
             books
           })
-          console.log(this.state.books);
         } else {
           this.setState({
             message: "Could not find any book by that title! Try again"

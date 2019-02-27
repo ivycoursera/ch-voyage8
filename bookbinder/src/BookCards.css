@@ -86,14 +86,8 @@
         max-width:31%;
     }
 
-    .book-card-image {
-        min-width: 200px;
-        max-width: 200px;
-        min-height: 380px;
-        max-height: 380px;
-    }
     .book-card-title{
-        font-size: 2vw;
+        font-size: 1.5vw;
     }
     .book-card-text{
         font-size: 1vw;

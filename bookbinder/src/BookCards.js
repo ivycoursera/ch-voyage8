@@ -16,7 +16,7 @@ const BookCards = (props) => {
     return (
       <div className="book-cards">
         {
-          books.filter((book) => book.volumeInfo.imageLinks).map((book) =>(
+          books.filter((book) => book.volumeInfo.imageLinks).reverse().map((book) =>(
             <Card
               className = "book-card"
               key={book.id}
@@ -26,7 +26,7 @@ const BookCards = (props) => {
                 className="book-card-image"
                 variant="top"
                 alt= {book.volumeInfo.title}
-                src={book.volumeInfo.imageLinks.thumbnail}
+                src={book.volumeInfo.imageLinks.smallThumbnail}
               />
               <Card.Body
                 className="book-card-body">
