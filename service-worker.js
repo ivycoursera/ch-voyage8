@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/ch-voyager8/precache-manifest.c53850da846005d18b91dd2697d9e65a.js"
+  "/ch-voyage8/tree/master/bookbinder/precache-manifest.be4082878691750fdadbf14359f7e3b2.js"
 );
 
 workbox.clientsClaim();
@@ -28,7 +28,7 @@ self.__precacheManifest = [].concat(self.__precacheManifest || []);
 workbox.precaching.suppressWarnings();
 workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
-workbox.routing.registerNavigationRoute("/ch-voyager8/index.html", {
+workbox.routing.registerNavigationRoute("/ch-voyage8/tree/master/bookbinder/index.html", {
   
   blacklist: [/^\/_/,/\/[^\/]+\.[^\/]+$/],
 });
